@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDModelStoreContainer" CdmEntityContainer="BDEntities">
+    <EntitySetMapping Name="BOOKINGS">
+      <EntityTypeMapping TypeName="BDModel.BOOKINGS">
+        <MappingFragment StoreEntitySet="BOOKINGS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DATE_OF_PARTY" ColumnName="DATE_OF_PARTY" />
+          <ScalarProperty Name="PLACES" ColumnName="PLACES" />
+          <ScalarProperty Name="HALL" ColumnName="HALL" />
+          <ScalarProperty Name="TENANT" ColumnName="TENANT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DISHES">
+      <EntityTypeMapping TypeName="BDModel.DISHES">
+        <MappingFragment StoreEntitySet="DISHES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="VEGAN" ColumnName="VEGAN" />
+          <ScalarProperty Name="VEGTARIAN" ColumnName="VEGTARIAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HALLS">
+      <EntityTypeMapping TypeName="BDModel.HALLS">
+        <MappingFragment StoreEntitySet="HALLS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="SIZE" ColumnName="SIZE" />
+          <ScalarProperty Name="PLACES" ColumnName="PLACES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INGREDIENTS">
+      <EntityTypeMapping TypeName="BDModel.INGREDIENTS">
+        <MappingFragment StoreEntitySet="INGREDIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DISH" ColumnName="DISH" />
+          <ScalarProperty Name="PRODUCT" ColumnName="PRODUCT" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENU">
+      <EntityTypeMapping TypeName="BDModel.MENU">
+        <MappingFragment StoreEntitySet="MENU">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DISH" ColumnName="DISH" />
+          <ScalarProperty Name="BOOGING" ColumnName="BOOGING" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+          <ScalarProperty Name="MEALS_NUMBER" ColumnName="MEALS_NUMBER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTS">
+      <EntityTypeMapping TypeName="BDModel.PRODUCTS">
+        <MappingFragment StoreEntitySet="PRODUCTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="BDModel.USERS">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="HOMENUMBER" ColumnName="HOMENUMBER" />
+          <ScalarProperty Name="POSTALCODE" ColumnName="POSTALCODE" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

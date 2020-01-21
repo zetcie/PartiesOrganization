@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="index.master.cs" Inherits="PartiesOrganization3.Main.index" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Restauracja Królewska</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script|Srisakdi&display=swap" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <a class="navbar-brand" href="index.aspx" style="font-family: 'Srisakdi'; font-size: 2vw">
+            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" />
+            Restauracja Królewska
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="contact.aspx" style="font-family: 'Srisakdi'; font-size: 1.5vw">Kontakt</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="gallery.aspx" style="font-family: 'Srisakdi'; font-size: 1.5vw">Galeria<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="nav-link" href="login.aspx" style="font-family: 'Srisakdi'; font-size: 1.5vw; color: forestgreen">zaloguj się<span class="sr-only">(current)</span></a>
+            </form>
+        </div>
+    </nav>
+    <div style="position: relative; text-align: center; color: white;">
+        <img src="img/weddingphoto.jpg" class="img-fluid" alt="Responsive image" />
+        <div class="content mt-3">
+            <asp:ContentPlaceHolder ID="c1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<footer  style="background-color: white">
+    <div class="container">
+        <div class="row">
+            <div class="col">Linki</div>
+            <div class="col">Źródła</div>
+            <div class="w-100"></div>
+            <div class="col"><a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/">Bootstrap</a></div>
+            <div class="col"><a href="https://picjumbo.com/">Zdjęcie w tle - picjumbo.com</a></div>
+            <div class="w-100"></div>
+            <div class="col"><a href="https://www.w3schools.com/">W3schools</a></div>
+            <div class="col"><a href="https://pl.freepik.com/darmowe-zdjecie-wektory/tlo">Tło plik wektorowy utworzone przez rawpixel.com - pl.freepik.com</a></div>
+            <div class="w-100"></div>
+            <div class="col"><a href="https://fonts.google.com/">Czcionki - fonts.google.com</a></div>
+        </div>
+    </div>
+</footer>
+

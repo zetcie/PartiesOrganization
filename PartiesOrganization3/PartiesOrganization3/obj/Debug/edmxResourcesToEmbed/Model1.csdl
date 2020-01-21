@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BOOKINGS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DATE_OF_PARTY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PLACES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HALL" Type="Int32" />
+    <Property Name="TENANT" Type="Int32" />
+    <NavigationProperty Name="HALLS" Relationship="Self.FK__BOOKINGS__HALL__4AB81AF0" FromRole="BOOKINGS" ToRole="HALLS" />
+    <NavigationProperty Name="USERS" Relationship="Self.FK__BOOKINGS__TENANT__4BAC3F29" FromRole="BOOKINGS" ToRole="USERS" />
+    <NavigationProperty Name="MENU" Relationship="Self.FK__MENU__BOOGING__4F7CD00D" FromRole="BOOKINGS" ToRole="MENU" />
+  </EntityType>
+  <EntityType Name="DISHES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="VEGAN" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="VEGTARIAN" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="INGREDIENTS" Relationship="Self.FK__INGREDIENT__DISH__3F466844" FromRole="DISHES" ToRole="INGREDIENTS" />
+    <NavigationProperty Name="MENU" Relationship="Self.FK__MENU__DISH__4E88ABD4" FromRole="DISHES" ToRole="MENU" />
+  </EntityType>
+  <EntityType Name="HALLS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SIZE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PLACES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BOOKINGS" Relationship="Self.FK__BOOKINGS__HALL__4AB81AF0" FromRole="HALLS" ToRole="BOOKINGS" />
+  </EntityType>
+  <EntityType Name="INGREDIENTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DISH" Type="Int32" />
+    <Property Name="PRODUCT" Type="Int32" />
+    <Property Name="WEIGHT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DISHES" Relationship="Self.FK__INGREDIENT__DISH__3F466844" FromRole="INGREDIENTS" ToRole="DISHES" />
+    <NavigationProperty Name="PRODUCTS" Relationship="Self.FK__INGREDIEN__PRODU__403A8C7D" FromRole="INGREDIENTS" ToRole="PRODUCTS" />
+  </EntityType>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DISH" Type="Int32" />
+    <Property Name="BOOGING" Type="Int32" />
+    <Property Name="WEIGHT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MEALS_NUMBER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BOOKINGS" Relationship="Self.FK__MENU__BOOGING__4F7CD00D" FromRole="MENU" ToRole="BOOKINGS" />
+    <NavigationProperty Name="DISHES" Relationship="Self.FK__MENU__DISH__4E88ABD4" FromRole="MENU" ToRole="DISHES" />
+  </EntityType>
+  <EntityType Name="PRODUCTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PRICE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WEIGHT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="INGREDIENTS" Relationship="Self.FK__INGREDIEN__PRODU__403A8C7D" FromRole="PRODUCTS" ToRole="INGREDIENTS" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LASTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="STREET" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HOMENUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="POSTALCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BOOKINGS" Relationship="Self.FK__BOOKINGS__TENANT__4BAC3F29" FromRole="USERS" ToRole="BOOKINGS" />
+  </EntityType>
+  <Association Name="FK__BOOKINGS__HALL__4AB81AF0">
+    <End Role="HALLS" Type="Self.HALLS" Multiplicity="0..1" />
+    <End Role="BOOKINGS" Type="Self.BOOKINGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HALLS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BOOKINGS">
+        <PropertyRef Name="HALL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BOOKINGS__TENANT__4BAC3F29">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+    <End Role="BOOKINGS" Type="Self.BOOKINGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BOOKINGS">
+        <PropertyRef Name="TENANT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MENU__BOOGING__4F7CD00D">
+    <End Role="BOOKINGS" Type="Self.BOOKINGS" Multiplicity="0..1" />
+    <End Role="MENU" Type="Self.MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BOOKINGS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MENU">
+        <PropertyRef Name="BOOGING" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__INGREDIENT__DISH__3F466844">
+    <End Role="DISHES" Type="Self.DISHES" Multiplicity="0..1" />
+    <End Role="INGREDIENTS" Type="Self.INGREDIENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DISHES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INGREDIENTS">
+        <PropertyRef Name="DISH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MENU__DISH__4E88ABD4">
+    <End Role="DISHES" Type="Self.DISHES" Multiplicity="0..1" />
+    <End Role="MENU" Type="Self.MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DISHES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MENU">
+        <PropertyRef Name="DISH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__INGREDIEN__PRODU__403A8C7D">
+    <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="0..1" />
+    <End Role="INGREDIENTS" Type="Self.INGREDIENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INGREDIENTS">
+        <PropertyRef Name="PRODUCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BOOKINGS" EntityType="Self.BOOKINGS" />
+    <EntitySet Name="DISHES" EntityType="Self.DISHES" />
+    <EntitySet Name="HALLS" EntityType="Self.HALLS" />
+    <EntitySet Name="INGREDIENTS" EntityType="Self.INGREDIENTS" />
+    <EntitySet Name="MENU" EntityType="Self.MENU" />
+    <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCTS" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" />
+    <AssociationSet Name="FK__BOOKINGS__HALL__4AB81AF0" Association="Self.FK__BOOKINGS__HALL__4AB81AF0">
+      <End Role="HALLS" EntitySet="HALLS" />
+      <End Role="BOOKINGS" EntitySet="BOOKINGS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BOOKINGS__TENANT__4BAC3F29" Association="Self.FK__BOOKINGS__TENANT__4BAC3F29">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="BOOKINGS" EntitySet="BOOKINGS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MENU__BOOGING__4F7CD00D" Association="Self.FK__MENU__BOOGING__4F7CD00D">
+      <End Role="BOOKINGS" EntitySet="BOOKINGS" />
+      <End Role="MENU" EntitySet="MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK__INGREDIENT__DISH__3F466844" Association="Self.FK__INGREDIENT__DISH__3F466844">
+      <End Role="DISHES" EntitySet="DISHES" />
+      <End Role="INGREDIENTS" EntitySet="INGREDIENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MENU__DISH__4E88ABD4" Association="Self.FK__MENU__DISH__4E88ABD4">
+      <End Role="DISHES" EntitySet="DISHES" />
+      <End Role="MENU" EntitySet="MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK__INGREDIEN__PRODU__403A8C7D" Association="Self.FK__INGREDIEN__PRODU__403A8C7D">
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+      <End Role="INGREDIENTS" EntitySet="INGREDIENTS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
