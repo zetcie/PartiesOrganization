@@ -1,16 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="edit_dish.aspx.cs" Inherits="PartiesOrganization3.Admin.edit_dish" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" runat="server">
     <div class="centered" style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);">
         <div class="container" style="height: 100%; align-content: center;">
             <div class="d-flex justify-content-center h-100">
                 <div class="card" style="height: 370px; margin-top: auto; margin-bottom: auto; width: 400px; background-color: rgba(0,0,0,0.5) !important;">
                     <div class="card-header" style="color: white;">
-                        <h3 style="font-family: 'Srisakdi'; font-size: 3vw; color:white;">Edytuj potrawę</h3>
+                        <h3 style="font-family: 'Srisakdi'; font-size: 3vw; color: white;">Edytuj potrawę</h3>
                     </div>
                     <div class="card-body">
                         <form id="f1" runat="server" method="post" novalidate="novalidate">
                             <div class="form-group">
                                 <asp:TextBox ID="name" runat="server" class="form-control" placeholder="Nazwa"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Podaj nazwę." Style="color: orange;" ControlToValidate="name" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 <asp:TextBox ID="description" runat="server" class="form-control" placeholder="Opis"></asp:TextBox>

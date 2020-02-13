@@ -76,6 +76,15 @@ namespace PartiesOrganization3.Client {
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
         
         /// <summary>
+        /// Kontrolka RangeValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator2;
+        
+        /// <summary>
         /// Kontrolka date_of_party.
         /// </summary>
         /// <remarks>

@@ -38,7 +38,7 @@ namespace PartiesOrganization3.Admin
 
                 Response.Redirect("dishes.aspx");
             }
-            else if(vegetarian.Checked == true)
+            else if (vegetarian.Checked == true)
             {
                 SqlCommand cmd = connectionString.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -58,5 +58,4 @@ namespace PartiesOrganization3.Admin
             }
         }
     }
-    
 }

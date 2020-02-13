@@ -13,12 +13,12 @@ namespace PartiesOrganization3.Client {
     public partial class selected_menu {
         
         /// <summary>
-        /// Kontrolka d1.
+        /// Kontrolka r1.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList d1;
+        protected global::System.Web.UI.WebControls.Repeater r1;
     }
 }

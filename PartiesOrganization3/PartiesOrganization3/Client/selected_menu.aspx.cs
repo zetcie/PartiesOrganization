@@ -59,8 +59,8 @@ namespace PartiesOrganization3.Client
 
                 dt1.Rows.Add(dr1);
             }
-            d1.DataSource = dt1;
-            d1.DataBind();
+            r1.DataSource = dt1;
+            r1.DataBind();
         }
     }
 }

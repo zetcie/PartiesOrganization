@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="alert alert-warning" id="error" runat="server" style="display: none" role="alert">
-                                    Podany email jest już używny.
+                                    Podany email jest już używany.
                                 </div>
                             </div>
                             <div class="form-group">

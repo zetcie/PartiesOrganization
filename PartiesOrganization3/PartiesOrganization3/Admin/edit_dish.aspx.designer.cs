@@ -31,6 +31,15 @@ namespace PartiesOrganization3.Admin {
         protected global::System.Web.UI.WebControls.TextBox name;
         
         /// <summary>
+        /// Kontrolka RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// Kontrolka description.
         /// </summary>
         /// <remarks>

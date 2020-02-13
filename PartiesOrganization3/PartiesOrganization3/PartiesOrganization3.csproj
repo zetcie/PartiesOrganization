@@ -80,6 +80,7 @@
     <Content Include="Admin\add_product.aspx" />
     <Content Include="Admin\delete_dish.aspx" />
     <Content Include="Admin\delete_ingredient.aspx" />
+    <Content Include="Admin\delete_meal.aspx" />
     <Content Include="Admin\delete_reservation_admin.aspx" />
     <Content Include="Admin\dishes.aspx" />
     <Content Include="Admin\edit_costs.aspx" />
@@ -154,6 +155,13 @@
     </Compile>
     <Compile Include="Admin\delete_ingredient.aspx.designer.cs">
       <DependentUpon>delete_ingredient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\delete_meal.aspx.cs">
+      <DependentUpon>delete_meal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\delete_meal.aspx.designer.cs">
+      <DependentUpon>delete_meal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\delete_reservation_admin.aspx.cs">
       <DependentUpon>delete_reservation_admin.aspx</DependentUpon>

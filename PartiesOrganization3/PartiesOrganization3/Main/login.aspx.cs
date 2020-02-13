@@ -62,6 +62,7 @@ namespace PartiesOrganization3.Main
                     else
                     {
                         Response.Redirect("../Main/login.aspx");
+                        error.Style.Add("display", "block");
                     }
                 }
                 else

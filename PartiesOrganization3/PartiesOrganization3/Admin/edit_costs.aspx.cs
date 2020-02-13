@@ -41,7 +41,7 @@ namespace PartiesOrganization3.Admin
                 cost.DataBind();
             }
 
-            
+
         }
 
         protected void itemSelected(object sender, EventArgs e)
@@ -62,13 +62,13 @@ namespace PartiesOrganization3.Admin
 
         protected void b2_Click(object sender, EventArgs e)
         {
-                SqlCommand cmd = connectionString.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update costs set price='" + price.Text + "' where cost_id='"+cost.SelectedValue+"'";
-                cmd.ExecuteNonQuery();
+            SqlCommand cmd = connectionString.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "update costs set price='" + price.Text + "' where cost_id='" + cost.SelectedValue + "'";
+            cmd.ExecuteNonQuery();
 
-                Response.Redirect("edit_costs.aspx");
-            
+            Response.Redirect("edit_costs.aspx");
+
         }
     }
 }

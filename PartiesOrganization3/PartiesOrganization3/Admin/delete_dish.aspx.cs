@@ -34,7 +34,7 @@ namespace PartiesOrganization3.Admin
 
             SqlCommand cmd = connectionString.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete dishes where dish_id='"+ Request.QueryString["id"].ToString() +"'";
+            cmd.CommandText = "delete dishes where dish_id='" + Request.QueryString["id"].ToString() + "'";
             cmd.ExecuteNonQuery();
 
             SqlCommand cmd2 = connectionString.CreateCommand();

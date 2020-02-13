@@ -6,7 +6,7 @@
             <div class="d-flex justify-content-center h-100">
                 <div class="card" style="height: 370px; margin-top: auto; margin-bottom: auto; width: 400px; background-color: rgba(0,0,0,0.5) !important;">
                     <div class="card-header" style="color: white;">
-                        <h3 style="font-family: 'Srisakdi'; font-size: 3vw; color:white;">Edytuj produkt</h3>
+                        <h3 style="font-family: 'Srisakdi'; font-size: 3vw; color: white;">Edytuj produkt</h3>
                     </div>
                     <div class="card-body">
                         <form id="f1" runat="server" method="post" novalidate="novalidate">

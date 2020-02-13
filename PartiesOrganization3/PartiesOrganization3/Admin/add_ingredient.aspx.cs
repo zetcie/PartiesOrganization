@@ -49,7 +49,7 @@ namespace PartiesOrganization3.Admin
         {
             SqlCommand cmd2 = connectionString.CreateCommand();
             cmd2.CommandType = CommandType.Text;
-            cmd2.CommandText = "insert into ingredients values('"+ dish.SelectedValue.ToString() +"', '" + product.SelectedValue.ToString() + "','" + weight.Text + "')";
+            cmd2.CommandText = "insert into ingredients values('" + dish.SelectedValue.ToString() + "', '" + product.SelectedValue.ToString() + "','" + weight.Text + "')";
             cmd2.ExecuteNonQuery();
 
             Response.Redirect("add_ingredient.aspx");

@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace PartiesOrganization3.Client
+namespace PartiesOrganization3.Admin
 {
     public partial class delete_meal : System.Web.UI.Page
     {
@@ -22,12 +22,24 @@ namespace PartiesOrganization3.Client
             }
             connectionString.Open();
 
-            SqlCommand cmd2 = connectionString.CreateCommand();
-            cmd2.CommandType = CommandType.Text;
-            cmd2.CommandText = "delete menu where menu_id='" + Request.QueryString["id"].ToString() + "'";
-            cmd2.ExecuteNonQuery();
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("../Main/login.aspx");
+            }
+            if (IsPostBack)
+            {
+                return;
+            }
+            else
+            {
+                SqlCommand cmd = connectionString.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete menu where menu_id='" + Request.QueryString["id"].ToString() + "'";
+                cmd.ExecuteNonQuery();
 
-            Response.Redirect("clients_reservations.aspx");
+                Response.Redirect("reservations.aspx");
+            }
+
         }
     }
 }

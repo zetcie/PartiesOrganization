@@ -41,8 +41,9 @@ namespace PartiesOrganization3.Client
                 hall.DataBind();
             }
             GetDates();
+            date_of_party.VisibleDate = DateTime.Today;
 
-            date_of_party.SelectedDate = DateTime.Today;
+
         }
 
         protected void b2_Click(object sender, EventArgs e)
@@ -91,6 +92,18 @@ namespace PartiesOrganization3.Client
 
         protected void Calendar1DayRender(object sender, DayRenderEventArgs e)
         {
+            
+            DateTime pastday = e.Day.Date;
+            DateTime date = DateTime.Now;
+            int year = date.Year;
+            int month = date.Month;
+            int day = date.Day;
+            DateTime today = new DateTime(year, month, day);
+            if (pastday.CompareTo(today) < 0)
+            {
+                e.Cell.BackColor = System.Drawing.Color.Gray;
+                e.Day.IsSelectable = false;
+            }
             DateTime nextDate;
             if (dsDates != null)
             {
@@ -122,7 +135,9 @@ namespace PartiesOrganization3.Client
             {
                 max_places.Text = "Maksymalna ilość miejsc: " + dr["places"].ToString();
                 size.Text = "Rozmiar sali: " + dr["size"].ToString();
-                RangeValidator1.MaximumValue = dr["places"].ToString();
+                RangeValidator2.MaximumValue = (dr["places"]).ToString();
+                RangeValidator2.Type = ValidationDataType.Integer;
+                RangeValidator2.Validate();
             }
         }
     }

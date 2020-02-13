@@ -6,7 +6,7 @@
             <div class="d-flex justify-content-center h-100">
                 <div class="card" style="height: 400px; margin-top: auto; margin-bottom: auto; width: 400px; background-color: rgba(0,0,0,0.5) !important;">
                     <div class="card-header" style="color: white;">
-                        <h3 style="font-family: 'Srisakdi'; font-size: 3vw; color:white;" >Dodaj potrawę</h3>
+                        <h3 style="font-family: 'Srisakdi'; font-size: 3vw; color: white;">Dodaj potrawę</h3>
                     </div>
                     <div class="card-body">
                         <form id="f1" runat="server" method="post" novalidate="novalidate">
@@ -23,7 +23,7 @@
                                 <asp:RadioButton ID="meat" Text="Mięsna" Checked="True" GroupName="RadioGroup1" runat="server" />
                             </div>
                             <div class="form-group">
-                                <asp:Button ID="b2" runat="server" class="btn float-right login_btn justify-content-center links " Style="color: black; background-color: #FFC312; width: 100px;" Text="Dodaj" OnClick="b2_Click"/>
+                                <asp:Button ID="b2" runat="server" class="btn float-right login_btn justify-content-center links " Style="color: black; background-color: #FFC312; width: 100px;" Text="Dodaj" OnClick="b2_Click" />
                             </div>
                         </form>
                     </div>

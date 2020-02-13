@@ -44,13 +44,13 @@ namespace PartiesOrganization3.Admin
 
             SqlCommand cmd = connectionString.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from products where product_id="+id+"";
+            cmd.CommandText = "select * from products where product_id=" + id + "";
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 name.Text = dr["products_name"].ToString();
                 price.Text = dr["price"].ToString();

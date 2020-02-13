@@ -36,7 +36,7 @@ namespace PartiesOrganization3.Admin
 
             SqlCommand cmd = connectionString.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from bookings as b join menu as m on m.booging=b.booking_id join dishes as d on m.dish=d.dish_id join ingredients as i on i.dish=d.dish_id join products as p on p.product_id=i.product where DATE_OF_PARTY between CONVERT(VARCHAR,GETDATE(),105) and CONVERT(VARCHAR,DATEADD(day, 7, GETDATE()),105)";
+            cmd.CommandText = "SELECT products_name, PRODUCTS_WEIGHT, TotalQuantity, price FROM PRODUCTS AS p JOIN(SELECT sum(CEILING(CONVERT(float, WEIGHT, 1) * CONVERT(float, places, 1) / 5 / CONVERT(float, PRODUCTS_WEIGHT, 1))) AS TotalQuantity, PRODUCT FROM bookings as b join menu as m on m.booging = b.booking_id join dishes as d on m.dish = d.dish_id join ingredients as i on i.dish = d.dish_id join products as p on p.product_id = i.product where DATE_OF_PARTY between CONVERT(VARCHAR, GETDATE(), 105) and CONVERT(VARCHAR, DATEADD(day, 7, GETDATE()), 105) GROUP BY products_name, PRODUCT) AS s ON p.PRODUCT_ID = s.product";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -46,29 +46,8 @@ namespace PartiesOrganization3.Admin
                 DataRow dr1 = dt1.NewRow();
                 dr1["products_name"] = dr["products_name"].ToString();
                 dr1["weight"] = dr["PRODUCTS_WEIGHT"].ToString();
-                dr1["count"] = (((Convert.ToInt32(dr["places"].ToString()) / 5) * Convert.ToInt32(dr["weight"].ToString())) / (Convert.ToInt32(dr["PRODUCTS_WEIGHT"].ToString()))).ToString();
+                dr1["count"] = dr["TotalQuantity"].ToString();
                 dr1["price"] = dr["price"].ToString();
-
-                /*SqlCommand cmd2 = connectionString.CreateCommand();
-                cmd2.CommandType = CommandType.Text;
-                cmd2.CommandText = "SELECT COUNT(DISTINCT meals_number) FROM menu where booging=" + dr["booking_id"].ToString() + "";
-                int number_of_meals = (int)cmd2.ExecuteScalar();
-                cmd2.CommandText = "select PRICE from COSTS where NUMER_OF_MEALS='" + number_of_meals.ToString() + "'";
-                int costs;
-                if (cmd2.ExecuteScalar() != null)
-                {
-                    costs = (int)cmd2.ExecuteScalar();
-                }
-                else
-                {
-                    costs = 0;
-                }
-                int guests = Convert.ToInt32(dr["places"].ToString());
-
-                int final_price = guests * costs;
-
-                dr1["final_costs"] = final_price.ToString();
-                */
                 dt1.Rows.Add(dr1);
             }
             r1.DataSource = dt1;
